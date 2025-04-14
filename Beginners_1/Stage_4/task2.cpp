@@ -1,6 +1,6 @@
 /*
   This C++ program defines a 'Phone' class to store and display phone numbers.
-  The class has private data members 'areaCode', 'exchange', and 'number' to represent the phone number components.
+  The class has private data members 'countryCode', 'areaCode', 'exchange', and 'number' to represent the phone number components.
 
   - The default constructor is provided to initialize the phone number components to 0.
 
@@ -16,20 +16,21 @@ using namespace std;
 
 class Phone {
 private:
+    int countryCode;
     int areaCode;
     int exchange;
     int number;
 
 public:
-    Phone() : areaCode(0), exchange(0), number(0) {}
+    Phone() : countryCode(1), areaCode(0), exchange(0), number(0) {}
 
     void Input() {
-        cout << "Enter your area code, exchange, and number: ";
-        cin >> areaCode >> exchange >> number;
+        cout << "Enter your country code, area code, exchange, and number: ";
+        cin >> countryCode >> areaCode >> exchange >> number;
     }
 
     void Display() {
-        cout << "My number is (" << areaCode << ") " << exchange << "-" << number << endl;
+        cout << "My number is +" << countryCode << " (" << areaCode << ") " << exchange << "-" << number << endl;
     }
 };
 
